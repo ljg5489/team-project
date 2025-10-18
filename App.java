@@ -19,16 +19,18 @@ public class App
         HashMap<User,Book> loanDB = new HashMap<>();
         
         lbMS.setUserDB("C\\Temp\\UserData2025.txt");
-        
+        System.out.println("----- 이용자 목록 출력 -----");
         lbMS.printDB(userDB);
         
         lbMS.setBookDB("c\\Temp\\BookData2025.txt");
-        
+        System.out.println("----- 책 목록 출력 -----");
         lbMS.printDB(userDB);
         
         lbMS.borrowBook("2025230001","B02");
-        
+        lbMS.borrowBook("2024320002", "B03");
+        lbMS.borrowBook("2023320003", "B04");
+        System.out.println("----- 대출 현황 -----");
         lbMS.printLoanList();
-        
+        System.out.println("--------------------");
     }
 }
