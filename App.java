@@ -1,5 +1,9 @@
 import java.util.*;
+    <<<<<<< HEAD
 import LibraryManagementSystem.*;
+=======
+import myClass.*;
+>>>>>>> 3b28f8148bdf9411d1421ca10cde8c25eef9285a
 /**
  * App 클래스의 설명을 작성하세요.
  *
@@ -10,7 +14,7 @@ public class App
 {
     /**
      * main 메소드 - 도서관관리시스템의 메인 실행 메소드입니다.
-     *
+     * 강의 자료 7장 31페이지 HashMap 참고, 
      */
     public static void main(String[] args)
     {
