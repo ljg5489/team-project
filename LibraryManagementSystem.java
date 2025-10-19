@@ -34,7 +34,8 @@ public class LibraryManagementSystem
         Set<User> user = loanDB.keySet();
         Iterator<User> it = user.iterator();
         while(it.hasNext()){
-            System.out.println(it.next() + "===>" + loanDB.get(it));
+            User u = it.next();
+            System.out.println(u + "===>" + loanDB.get(u));
         }
     }
     
@@ -57,16 +58,16 @@ public class LibraryManagementSystem
                     i++;
                     switch(i){
                         case 1:
-                            author = stz.nextToken();
-                            break;
-                        case 2:
                             bookID = stz.nextToken();
                             break;
+                        case 2:
+                            title = stz.nextToken();
+                            break;
                         case 3:
-                            publisher = stz.nextToken();
+                            author = stz.nextToken();
                             break;
                         case 4:
-                            title = stz.nextToken();
+                            publisher = stz.nextToken();
                             break;
                         case 5:
                             year = Integer.parseInt(stz.nextToken());
