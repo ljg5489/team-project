@@ -17,23 +17,17 @@ public class App
     public static void main(String[] args)
     {
         LibraryManagementSystem lbMS = new LibraryManagementSystem();
-    
         HashMap<User,Book> loanDB = new HashMap<>();
-        
-        
+            
         LibDB userDB = lbMS.setUserDB("C:/Temp/BookData2025.txt");
-        System.out.println("----- 이용자 목록 출력 -----");
         lbMS.printDB(userDB);
         
         LibDB bookDB = lbMS.setBookDB("C:/Temp/BookData2025.txt");
-        System.out.println("----- 책 목록 출력 -----");
         lbMS.printDB(bookDB);
         
         lbMS.borrowBook("2025230001","B02");
         lbMS.borrowBook("2024320002", "B03");
         lbMS.borrowBook("2023320003", "B04");
-        System.out.println("----- 대출 현황 -----");
         lbMS.printLoanList();
-        System.out.println("--------------------");
     }
 }
