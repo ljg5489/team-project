@@ -2,10 +2,10 @@ package myClass; // 6장: 패키지 선언
 
 
 /**
- * Book 클래스의 설명을 작성하세요.
+ * Book 클래스의 설명을 작성하세요. DB_Element클래스를 상속받고 도서관 '책' 한 권의 정보를 저장하는 데이터 클래스입니다.
  *
- * @author (작성자 이름)
- * @version (버전 번호 또는 작성한 날짜)
+ * @author (20220320011_김민겸)
+ * @version (2025.10.19)
  */
 public class Book extends DB_Element
 {
