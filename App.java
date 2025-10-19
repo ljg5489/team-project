@@ -1,17 +1,5 @@
 import java.util.*;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <<<<<<< HEAD
-import LibraryManagementSystem.*;
-=======
 import myClass.*;
->>>>>>> 3b28f8148bdf9411d1421ca10cde8c25eef9285a
-=======
-import myClass.*;
->>>>>>> 3b28f8148bdf9411d1421ca10cde8c25eef9285a
-=======
-import myClass.*;
->>>>>>> 3b28f8148bdf9411d1421ca10cde8c25eef9285a
 /**
  * App 클래스의 설명을 작성하세요.
  *
