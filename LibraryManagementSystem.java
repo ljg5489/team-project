@@ -98,7 +98,7 @@ public class LibraryManagementSystem
                 int j = 0;
                 for(int i=0;i<stz_i;i++){
                     if(i==0){
-                        stID = Integer.parseInt(stz.nextToken());
+                        stID = Integer.valueOf(stz.nextToken());
                     }else if(i==1){
                         name = stz.nextToken();
                     }
