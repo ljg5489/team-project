@@ -1,4 +1,4 @@
-package myClass;
+package myClass; // 6장: 패키지 선언
 
 
 /**
@@ -9,8 +9,7 @@ package myClass;
  */
 public class User extends DB_Element
 {
-    private String name;
-    // 6장: 기본 타입 int가 아닌 'Wrapper 클래스' Integer 사용
+    private String name; // 6장: 기본 타입이 아닌 'Wrapper 클래스' 사용
     private Integer stID;
 
     public User(String name, Integer stID)
@@ -21,13 +20,11 @@ public class User extends DB_Element
 
     public String getID()
     {
-        // 6장: Wrapper 클래스(Integer)의 메소드(toString) 사용
         return this.stID.toString();
     }
-
+    // 6장: Object 클래스의 'toString()' 메소드 오버라이딩
     public String toString()
     {
-        // 6장: 모든 클래스의 최상위 부모인 'Object 클래스'의 toString() 메소드를 '오버라이딩'
-        return "User [학번: " + stID + ", 이름: " + name + "]";
+        return "[" + this.stID + "] " + this.name;
     }
 }

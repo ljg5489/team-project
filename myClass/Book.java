@@ -1,4 +1,4 @@
-package myClass;
+package myClass; // 6장: 패키지 선언
 
 
 /**
@@ -28,9 +28,9 @@ public class Book extends DB_Element
     {
         return this.bookID;
     }
-
+    // 6장: Object 클래스의 'toString()' 메소드 오버라이딩
     public String toString()
     {
-        return "Book [ID: " + bookID + ", 제목: " + title + ", 저자: " + author + "]";
+        return "(" + this.bookID + ") " + this.title + ", " + this.author + ", " + this.publisher + ", " + this.year;
     }
 }

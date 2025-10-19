@@ -1,4 +1,4 @@
-package myClass;
+package myClass; // 6장: 패키지 선언
 
 
 /**
@@ -9,5 +9,5 @@ package myClass;
  */
 public abstract class DB_Element
 {
-    public abstract String getID();
+    public abstract String getID(); 
 }
