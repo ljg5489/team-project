@@ -21,11 +21,11 @@ public class App
         HashMap<User,Book> loanDB = new HashMap<>();
         
         
-        lbMS.setUserDB("C:/Temp/BookData2025.txt");
+        LibDB userDB = lbMS.setUserDB("C:/Temp/BookData2025.txt");
         System.out.println("----- 이용자 목록 출력 -----");
         lbMS.printDB(userDB);
         
-        lbMS.setBookDB("C:/Temp/BookData2025.txt");
+        LibDB bookDB = lbMS.setBookDB("C:/Temp/BookData2025.txt");
         System.out.println("----- 책 목록 출력 -----");
         lbMS.printDB(bookDB);
         
