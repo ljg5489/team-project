@@ -27,7 +27,7 @@ public class App
         System.out.println("----- 책 목록 출력 -----");
         lbMS.printDB(bookDB);
         
-        lbMS.borrowBook("2025230001","B02");
+        lbMS.borrowBook("2025320001","B02");
         lbMS.borrowBook("2024320002", "B03");
         lbMS.borrowBook("2023320003", "B04");
         System.out.println("----- 대출 현황 -----");
