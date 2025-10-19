@@ -41,11 +41,9 @@ public class LibDB<T extends DB_Element> // 7장: '제네릭 클래스' 선언 �
 
     public void printAllElements()
     {
-        System.out.println("--- DB Elements List ---");
         for (T element : db)
         { 
             System.out.println(element); // 6장: println이 객체의 toString()을 자동 호출
         }
-        System.out.println("--------------------------");
     }
 }
