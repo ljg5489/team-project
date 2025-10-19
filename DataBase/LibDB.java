@@ -13,7 +13,7 @@ import java.util.Iterator; // 7장: 컬렉션 프레임워크 (Iterator)
  */
 public class LibDB<T extends DB_Element> // 7장: '제네릭 클래스' 선언 및 '제한된 타입' (<T extends ...>)
 {
-    private ArrayList<T> db; // 7장: 제네릭을 사용한 ArrayList 선언
+    private ArrayList<T> db; // 7장: 제네릭을 사용한 ArrayList 선언.
 
     public LibDB()
     {
