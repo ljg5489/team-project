@@ -55,7 +55,7 @@ public class LibraryManagementSystem
         Iterator<User> it = user.iterator();
         while(it.hasNext()){
             User u = it.next();
-            System.out.println(u + "===>" + loanDB.get(u));
+            System.out.println(u + " ===> " + loanDB.get(u));
         }
     }
     
