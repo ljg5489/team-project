@@ -96,6 +96,8 @@ public class LibraryManagementSystem
             while(book_it.hasNext()){
                 bookDB.addElement(book_it.next());
             }
+            src.close();
+            sc.close();
         }catch(IOException e){
             System.out.println("파일 경로가 올바르지 않습니다.");
         }
@@ -131,6 +133,8 @@ public class LibraryManagementSystem
             for(int i=0;i<userList.size();i++){
                 userDB.addElement(userList.get(i));
             }
+            src.close();
+            sc.close();
         }catch(IOException e){
             System.out.println("파일 경로가 올바르지 않습니다.");
         }
