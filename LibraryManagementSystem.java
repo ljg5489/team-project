@@ -4,11 +4,12 @@ import myClass.*;
 import DataBase.*;
 /**
  * LybraryManagementSystem 클래스의 설명을 작성하세요.
- * 외부 txt 파일을 읽어와서 이용자 객체와 책 객체를 만들고 해당 객체를 각각 이용자DB와 책DB에 저장합니다
- * 저장한 DB정보를 HashMap을 이용해 loanDB에 저장하는 형태로 관리하며 추가로 도서 대출 및 대출 목록 출력을 수행하는 도서관 관리 시스템입니다.
+ * 
+ * 외부 txt 파일을 읽어와서 이용자 객체와 책 객체를 만들고 해당 객체를 각각 이용자DB와 책DB에 저장하는 역할을 합니다.
+ * 저장한 DB정보를 HashMap을 이용해 대출DB에 저장하는 형태로 관리하며 추가로 도서 대출 및 대출 목록 출력을 수행하는 도서관 관리 시스템입니다.
  *
  * @author (2022320039 정하경)
- * @version (2025.10.19)
+ * @version (2025.10.22)
  */
 public class LibraryManagementSystem
 {
@@ -17,8 +18,8 @@ public class LibraryManagementSystem
     LibDB<User> userDB;
     
     /*
-     * LibraryManagementSystem의 생성자로서 bookDB와 loanDB, userDB를 초기화
-     * 강의자료 4장: 생성자 참고
+     * LibraryManagementSystem의 생성자로서 bookDB과 loanDB, userDB 객체를 생성하고, 각 객체를 초기화
+     * 교과서 199 페이지 생성자 참고
      */
     public LibraryManagementSystem(){
         bookDB = new LibDB<Book>();
@@ -31,7 +32,7 @@ public class LibraryManagementSystem
     /*
      * 파라미터로 전달받은 값들을 이용해 각 객체가 DB에 있는지 검색한 뒤,
      * loanDB에 새로운 대출기록 추가
-     * 강의자료 7장: HashMap 참고
+     * 교과서 425페이지 HashMap 참고
      */
     public void borrowBook(String userID, String bookID){
         User user = userDB.findElement(userID);
@@ -41,7 +42,7 @@ public class LibraryManagementSystem
     
     /*
      * 파라미터로 전달받은 책DB 또는 이용자DB를 출력
-     * 강의자료 7장: 제네릭 참고
+     * 교과서 440페이지 제네릭 메소드 참고
      */
     public <T extends DB_Element> void printDB(LibDB<T> db){
         db.printAllElements();
@@ -50,8 +51,8 @@ public class LibraryManagementSystem
     /*
      * loanDB에 있는 키값들을 set형식으로 얻어온다음
      * 해당 키값들을 이용해 iterator 객체를 생성
-     * 생성한 객체로 while문을 실행
-     * 강의자료 7장: Iterator 참고
+     * 생성한 Iterator 객체로 while문을 실행
+     * 교과서 422 페이지 Iterator 참고
      */
     public void printLoanList(){
         Set<User> user = loanDB.keySet();
@@ -64,15 +65,15 @@ public class LibraryManagementSystem
     
     /*
      * 우선 파일입력 중 오류가 날 수 있으니 try-catch 를 사용해서 예외처리를 진행
-     * 전달받은 파라미터값을 이용해 문자 스트림 객체를 생성
+     * 전달받은 파라미터값으로 FileReader를 이용해 파일에서 문자를 읽어오는 스트림 객체 생성
      * Scanner 클래스를 이용해서 파일의 내용을 한 줄 단위로 읽음
      * Scanner 클래스를 이용해 만들어진 객체에 다음 내용이 있는 경우 while문을 진행
      * 파일에서 읽어드린 한줄의 문자열을 StringTokenizer를 이용해서 "/" 를 기준으로 토큰을 분리
-     * 읽어드리는 파일 값은 bookID,title,author,pulisher,year 순 이기에 switch문을 이용해서 각각의 적절한 값을 입력받음
-     * 한 줄을 다 입력받은 후에 새로운 Book 객체를 생성
-     * 생성한 Book 객체를 bookDB에 추가
-     * 마지막으로 bookDB를 리턴
-     * 강의자료 6장: StringTokenizer, 8장: FileReader 와 교과서 495페이지 참고
+     * 분리한 토큰들을 이용해 책 객체를 생성
+     * 생성한 책 객체를 bookList에 넣어 저장
+     * 저장한 값으로 Iterator를 사용해 책DB에 추가
+     * 마지막으로 책DB를 리턴
+     * 교과서 376장 StringTokenizer, 교과서 489장 FileReader, 교과서 495페이지 Scanner를 이용하여 한 줄 씩 읽기 참고
      */
     public LibDB<Book> setBookDB(String bookFile){
         ArrayList<Book> bookList = new ArrayList<>();
@@ -105,15 +106,16 @@ public class LibraryManagementSystem
     }
     
     /*
-     * setBookDB와 마찬가지로 파일입력 중 오류가 날 수 있으니 try-catch 를 사용해 예외처리 진행
-     * 전달받은 파라미터값을 이용해 문자 스트림 객체 생성
-     * Scanner 클래스를 이용해 파일의 내용을 한 줄 단위로 읽음 그렇게 만들어진 객체로 while문을 돌림
+     * 오류가 날 수 있으니 try-catch 를 사용해 예외처리 진행
+     * 전달받은 파라미터값으로 FileReader를 이용해 파일에서 문자를 읽어오는 스트림 객체 생성
+     * Scanner 클래스를 이용해서 파일의 내용을 한 줄 단위로 읽음
+     * Scanner 클래스를 이용해 만들어진 객체에 다음 내용이 있는 경우 while문을 진행
      * 파일에서 읽어드린 한 줄의 문자열을 StringTokenizer를 이용해 "/" 를 기준으로 토큰을 분리
-     * 읽어드리는 파일 값은 for문과 if 문을 이용해 각각 저장
-     * 그렇게 읽어드린 값으로 새로운 User 객체 생성
-     * 방금 만들어진 User 객체를 userDB에 추가
-     * 마지막으로 userDB를 리턴
-     * 강의자료 6장: StringTokenizer, 8장: FileReader 와 교과서 495페이지 참고
+     * 분리한 토큰을 이용해 이용자 객체를 생성
+     * 생성한 이용자 객체를 userList에 저장
+     * 저장한 값의 크기로 for문을 사용해 유저DB에 추가
+     * 마지막으로 유저DB를 리턴
+     * 교과서 376장 StringTokenizer, 교과서 489장 FileReader, 교과서 495페이지 Scanner를 이용하여 한 줄 씩 읽기 참고
      */
     public LibDB<User> setUserDB(String userFile){
         ArrayList<User> userList = new ArrayList<>();
