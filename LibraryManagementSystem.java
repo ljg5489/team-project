@@ -12,15 +12,18 @@ import DataBase.*;
  */
 public class LibraryManagementSystem
 {
-    LibDB<Book> bookDB = new LibDB<Book>();
-    HashMap<User,Book> loanDB = new HashMap<>();
-    LibDB<User> userDB = new LibDB<User>();
+    LibDB<Book> bookDB;
+    HashMap<User,Book> loanDB;
+    LibDB<User> userDB;
     
     /*
      * LibraryManagementSystem의 생성자로서 bookDB와 loanDB, userDB를 초기화
      * 강의자료 4장: 생성자 참고
      */
     public LibraryManagementSystem(){
+        bookDB = new LibDB<Book>();
+        loanDB = new HashMap<User, Book>();
+        userDB = new LibDB<User>();
         this.bookDB = bookDB;
         this.loanDB = loanDB;
         this.userDB = userDB;
@@ -72,6 +75,7 @@ public class LibraryManagementSystem
      * 강의자료 6장: StringTokenizer, 8장: FileReader 와 교과서 495페이지 참고
      */
     public LibDB<Book> setBookDB(String bookFile){
+        ArrayList<Book> bookList = new ArrayList<>();
         String str = "";
         
         try{
@@ -80,34 +84,17 @@ public class LibraryManagementSystem
             while(sc.hasNext()){
                 str = sc.nextLine();
                 StringTokenizer stz = new StringTokenizer(str, "/");
-                String author = "";
-                String bookID = "";
-                String publisher = "";
-                String title = "";
-                int year = 0;
-                int i = 0;
-                while(stz.hasMoreTokens()){
-                    i++;
-                    switch(i){
-                        case 1:
-                            bookID = stz.nextToken();
-                            break;
-                        case 2:
-                            title = stz.nextToken();
-                            break;
-                        case 3:
-                            author = stz.nextToken();
-                            break;
-                        case 4:
-                            publisher = stz.nextToken();
-                            break;
-                        case 5:
-                            year = Integer.parseInt(stz.nextToken());
-                            break;
-                    }
-                }
+                String bookID = stz.nextToken();
+                String title = stz.nextToken();
+                String author = stz.nextToken();
+                String publisher = stz.nextToken();
+                int year = Integer.parseInt(stz.nextToken());
                 Book b = new Book(author,bookID,publisher,title,year);
-                bookDB.addElement(b);
+                bookList.add(b);
+            }
+            Iterator<Book> book_it = bookList.iterator();
+            while(book_it.hasNext()){
+                bookDB.addElement(book_it.next());
             }
         }catch(IOException e){
             System.out.println("파일 경로가 올바르지 않습니다.");
