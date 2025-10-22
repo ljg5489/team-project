@@ -3,7 +3,7 @@ import java.io.*;
 import myClass.*;
 import DataBase.*;
 /**
- * LybraryManagementSystem 클래스의 설명을 작성하세요.
+ * LibraryManagementSystem 클래스의 설명을 작성하세요.
  * 
  * 외부 txt 파일을 읽어와서 이용자 객체와 책 객체를 만들고 해당 객체를 각각 이용자DB와 책DB에 저장하는 역할을 합니다.
  * 저장한 DB정보를 HashMap을 이용해 대출DB에 저장하는 형태로 관리하며 추가로 도서 대출 및 대출 목록 출력을 수행하는 도서관 관리 시스템입니다.
@@ -52,7 +52,7 @@ public class LibraryManagementSystem
      * loanDB에 있는 키값들을 set형식으로 얻어온다음
      * 해당 키값들을 이용해 iterator 객체를 생성
      * 생성한 Iterator 객체로 while문을 실행
-     * 교과서 422 페이지 Iterator 참고
+     * 교과서 422 페이지 Iterator, 교과서 429 페이지 HashMap, Set, Iterator 사용 참고
      */
     public void printLoanList(){
         Set<User> user = loanDB.keySet();
@@ -114,7 +114,7 @@ public class LibraryManagementSystem
      * 분리한 토큰을 이용해 이용자 객체를 생성
      * 생성한 이용자 객체를 userList에 저장
      * 저장한 값의 크기로 for문을 사용해 유저DB에 추가
-     * 마지막으로 유저DB를 리턴
+     * 마지막으로 이용자DB를 리턴
      * 교과서 376장 StringTokenizer, 교과서 489장 FileReader, 교과서 495페이지 Scanner를 이용하여 한 줄 씩 읽기 참고
      */
     public LibDB<User> setUserDB(String userFile){
