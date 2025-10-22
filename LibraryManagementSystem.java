@@ -114,6 +114,7 @@ public class LibraryManagementSystem
      * 강의자료 6장: StringTokenizer, 8장: FileReader 와 교과서 495페이지 참고
      */
     public LibDB<User> setUserDB(String userFile){
+        ArrayList<User> userList = new ArrayList<>();
         String str = "";
         
         try{
@@ -122,19 +123,13 @@ public class LibraryManagementSystem
             while(sc.hasNext()){
                 str = sc.nextLine();
                 StringTokenizer stz = new StringTokenizer(str, "/");
-                String name = "";
-                Integer stID = 0;
-                int stz_i = stz.countTokens();
-                int j = 0;
-                for(int i=0;i<stz_i;i++){
-                    if(i==0){
-                        stID = Integer.valueOf(stz.nextToken());
-                    }else if(i==1){
-                        name = stz.nextToken();
-                    }
-                }
+                Integer stID = Integer.valueOf(stz.nextToken());
+                String name = stz.nextToken();
                 User u = new User(name, stID);
-                userDB.addElement(u);
+                userList.add(u);
+            }
+            for(int i=0;i<userList.size();i++){
+                userDB.addElement(userList.get(i));
             }
         }catch(IOException e){
             System.out.println("파일 경로가 올바르지 않습니다.");
