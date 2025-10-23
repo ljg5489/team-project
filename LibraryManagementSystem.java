@@ -118,22 +118,18 @@ public class LibraryManagementSystem
      * 교과서 376장 StringTokenizer, 교과서 489장 FileReader, 교과서 495페이지 Scanner를 이용하여 한 줄 씩 읽기 참고
      */
     public LibDB<User> setUserDB(String userFile){
-        ArrayList<User> userList = new ArrayList<>();
         String str = "";
         
         try{
             FileReader src = new FileReader(userFile);
             Scanner sc = new Scanner(src);
-            while(sc.hasNext()){
+            for(int i=0;sc.hasNext();i++){
                 str = sc.nextLine();
                 StringTokenizer stz = new StringTokenizer(str, "/");
                 Integer stID = Integer.valueOf(stz.nextToken());
                 String name = stz.nextToken();
                 User u = new User(name, stID);
-                userList.add(u);
-            }
-            for(int i=0;i<userList.size();i++){
-                userDB.addElement(userList.get(i));
+                userDB.addElement(u);
             }
             src.close();
             sc.close();
