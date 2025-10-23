@@ -122,7 +122,7 @@ public class LibraryManagementSystem
         try{
             FileReader src = new FileReader(userFile);
             Scanner sc = new Scanner(src);
-            for(int i=0;sc.hasNext();i++){
+            for(;sc.hasNext();){
                 str = sc.nextLine();
                 StringTokenizer stz = new StringTokenizer(str, "/");
                 Integer stID = Integer.valueOf(stz.nextToken());
