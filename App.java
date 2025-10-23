@@ -12,7 +12,7 @@ public class App
     /**
      * main 메소드 - 도서관관리시스템의 메인 실행 메소드로 myClass 패키지와 DataBase 패키지, 
      *              LibraryManagementSystem Class를 참조해 이용자와 책을 등록하고 대출을 진행합니다.
-     * 교과서 4장 32페이지 객체 참조, 7장 424페이지 HashMap 참고
+     * 교과서 4장 187페이지 객체 멤버 접근, 7장 424페이지 HashMap 참고
      */
     public static void main(String[] args)
     {

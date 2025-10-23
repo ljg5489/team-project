@@ -11,9 +11,15 @@ import java.util.Iterator; // 7장: 컬렉션 프레임워크 (Iterator)
  * @author (20220320011_김민겸)
  * @version (2025.10.19)
  */
-public class LibDB<T extends DB_Element> // 7장: '제네릭 클래스' 선언 및 '제한된 타입' (<T extends ...>)
+
+
+/**
+* 제네릭 클래스를 작성하는 방법은 기전의 클래스 작성 방법과
+* 교과서 436페이지 제네릭 클래스 참고
+*/
+public class LibDB<T extends DB_Element>
 {
-    private ArrayList<T> db; // 7장: 제네릭을 사용한 ArrayList 선언
+    private ArrayList<T> db;
 
     public LibDB()
     {
@@ -43,7 +49,7 @@ public class LibDB<T extends DB_Element> // 7장: '제네릭 클래스' 선언 �
     {
         for (T element : db)
         { 
-            System.out.println(element); // 6장: println이 객체의 toString()을 자동 호출
+            System.out.println(element);
         }
     }
 }
