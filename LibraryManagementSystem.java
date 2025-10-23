@@ -109,11 +109,10 @@ public class LibraryManagementSystem
      * 오류가 날 수 있으니 try-catch 를 사용해 예외처리 진행
      * 전달받은 파라미터값으로 FileReader를 이용해 파일에서 문자를 읽어오는 스트림 객체 생성
      * Scanner 클래스를 이용해서 파일의 내용을 한 줄 단위로 읽음
-     * Scanner 클래스를 이용해 만들어진 객체에 다음 내용이 있는 경우 while문을 진행
+     * Scanner 클래스를 이용해 만들어진 객체에 다음 내용이 있는 경우를 활용하여 for문 반복
      * 파일에서 읽어드린 한 줄의 문자열을 StringTokenizer를 이용해 "/" 를 기준으로 토큰을 분리
      * 분리한 토큰을 이용해 이용자 객체를 생성
-     * 생성한 이용자 객체를 userList에 저장
-     * 저장한 값의 크기로 for문을 사용해 유저DB에 추가
+     * 생성한 이용자 객체를 이용자DB에 추가
      * 마지막으로 이용자DB를 리턴
      * 교과서 376장 StringTokenizer, 교과서 489장 FileReader, 교과서 495페이지 Scanner를 이용하여 한 줄 씩 읽기 참고
      */
