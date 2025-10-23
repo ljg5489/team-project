@@ -26,7 +26,7 @@ public class LibraryManagementSystem
         loanDB = new HashMap<User, Book>();
         userDB = new LibDB<User>();
         this.bookDB = bookDB;
-        this.loanDB = loanDB;
+        this.loanDB = null;
         this.userDB = userDB;
     }
     /*

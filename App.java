@@ -19,6 +19,7 @@ public class App
         LibraryManagementSystem lbMS = new LibraryManagementSystem();
         HashMap<User,Book> loanDB = new HashMap<>();
         
+        lbMS.loanDB = loanDB;
         LibDB userDB = lbMS.setUserDB("C:/Temp/UserData2025.txt");
         System.out.println("----- 이용자 목록 출력 -----");
         lbMS.printDB(userDB);
