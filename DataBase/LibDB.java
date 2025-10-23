@@ -1,8 +1,8 @@
-package DataBase; // 6장: 패키지 선언
+package DataBase; 
 
-import myClass.DB_Element; // 6장: 다른 패키지의 클래스 import
-import java.util.ArrayList; // 7장: 컬렉션 프레임워크 (ArrayList)
-import java.util.Iterator; // 7장: 컬렉션 프레임워크 (Iterator)
+import myClass.DB_Element; 
+import java.util.ArrayList; 
+import java.util.Iterator; 
 
 
 /**
@@ -14,14 +14,13 @@ import java.util.Iterator; // 7장: 컬렉션 프레임워크 (Iterator)
 
 
 /**
-<<<<<<< HEAD
 * 제네릭 클래스를 작성하는 방법은 기전의 클래스 작성 방법과 유사한데,
 * 클래스 이름 다음에 일반화된 타입의 맥변수를 <> 사이에 츄가한다는 차이가 있다
 * 교과서 436페이지 제네릭 클래스 참고
-=======
 * 제네릭 클래스를 작성하는 방법은 기전의 클래스 작성 방법과
 * 교과서 436페이지 제네릭 클래스 참고
->>>>>>> c4000aa57567c480e944eb5954a8fe6ce5d75033
+* 제네릭 클래스를 작성하는 방법은 기전의 클래스 작성 방법과
+* 교과서 436페이지 제네릭 클래스 참고
 */
 public class LibDB<T extends DB_Element>
 {
