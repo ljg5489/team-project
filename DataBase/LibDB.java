@@ -4,7 +4,6 @@ import myClass.DB_Element;
 import java.util.ArrayList; 
 import java.util.Iterator; 
 
-
 /**
  * LibDB 클래스의 설명을 작성하세요. User객체들이나 Book객체들을 List로 관리하는 제네릭 데이터베이스 클래스입니다.
  *

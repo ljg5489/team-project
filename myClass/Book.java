@@ -46,7 +46,7 @@ public class Book extends DB_Element
      * toString메소드는 객체의 클래스의 이름을 얻어 와서 객체의 해시코드 값을 16진수로
      * toString메소드는 객체의 클래스의 이름을 얻어 와서 객체의 해시코드 값을 16진수로
      * 변환하여 연결하는 문자열 리런
-     * 교과서 353페이지 객체를 문자열로 변, toString()메소드 참고
+     * 교과서 353페이지 객체를 문자열로 변환, toString()메소드 참고
      */
     public String toString()
     {
