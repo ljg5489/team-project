@@ -17,7 +17,7 @@ public abstract class DB_Element
 {
     /**
      * 추상 메소드란 선언은 돼있으나 코드가 구현되지 않은 껍데기만 있는 메소드
-     * 교과서 296페이지 추상 메소드 참고 
+     * 교과서 296페이지 추상 메소드 참고 
      */
     public abstract String getID(); 
 }
